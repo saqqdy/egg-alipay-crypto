@@ -2,8 +2,8 @@ const AlipayCrypto = require('alipay-crypto')
 
 module.exports = app => {
 	/**
-	 * alipaycrypto
+	 * alipaycrypto instance
 	 */
-	const { token, aesKey, appId, options = {} } = app.config.alipaycrypto
-	app.alipaycrypto = new AlipayCrypto(token, aesKey, appId, options)
+	const { privateKey, debug = false } = app.config.alipaycrypto
+	app.alipaycrypto = new AlipayCrypto({ privateKey, debug })
 }

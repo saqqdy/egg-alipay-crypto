@@ -5,7 +5,6 @@
  * @property {String} SOME_KEY - some description
  */
 exports.alipaycrypto = {
-	// token: '',
-	// aesKey: '',
-	// appId: ''
+	// debug: false,
+	// privateKey: 'xxxxxx'
 }

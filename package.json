@@ -1,7 +1,7 @@
 {
 	"name": "egg-alipay-crypto",
 	"description": "扩展支持支付宝加解密nodejs版本的egg插件",
-	"version": "1.0.0-beta.1",
+	"version": "1.0.0",
 	"packageManager": "pnpm@8.6.3",
 	"eggPlugin": {
 		"name": "alipaycrypto"
@@ -28,7 +28,7 @@
 		"prettier": "prettier --write \"**/*.{js,ts,json,md}\""
 	},
 	"dependencies": {
-		"alipay-crypto": "1.0.0-beta.0",
+		"alipay-crypto": "1.0.1",
 		"js-cool": "^5.3.0"
 	},
 	"devDependencies": {

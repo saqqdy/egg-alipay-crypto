@@ -45,14 +45,7 @@ egg-alipay-crypto support all alipay-crypto's configurations, check [alipay-cryp
 ```js
 // {app_root}/config/config.default.js
 exports.alipaycrypto = {
-  // token: '',
-  // aesKey: '',
-  // appId: '',
-  // options: {
-  //   normalizeTags: true,
-  //   buildXmlOptions: {}, // 透传用于生成 xml 字符串的配置
-  //   xmlOptions: {} // 透传用于解析 xml 字符串的配置
-  // }
+  privateKey: ''
 }
 ```
 
@@ -66,27 +59,27 @@ class HomeService extends Service {
   async index() {
     const { ctx, app } = this
     const data = {
-      // ...
+      app_id: '20135234674',
+      method: 'alipay.system.oauth.token',
+      sign_type: 'RSA2',
+      version: '1.0',
+      charset: 'utf-8',
+      timestamp: '2023-07-29 14:50:22',
+      grant_type: 'authorization_code',
+      biz_content: ''
     }
-    await ctx.decryptWxMsg(this.request.body, options) // decrypt
-    await ctx.encryptWxMsg(data, options) // encrypt
+
+    const initial = ctx.serializedParams(data) // 'app_id=20135234674&charset=utf-8&grant_type=authorization_code&method=alipay.system.oauth.token&sign_type=RSA2&timestamp=2023-07-29 14:50:22&version=1.0'
+    const sign = ctx.alipaySign(initial) // or => const sign = ctx.alipaySign(data)
+    const md5_result = ctx.md5(data)
     // or
-    await app.alipaycrypto.decrypt(encrypt, timestamp, nonce, options) // decrypt
-    await app.alipaycrypto.encrypt(data, options) // encrypt
+    const initial = app.alipaycrypto.serializedParams(data)
+    const sign = app.alipaycrypto.encrypt(initial)
+    const md5_result = app.alipaycrypto.md5(data)
   }
 }
 
 module.exports = HomeService
-```
-
-### Extended Context Methods
-
-```js
-// {app_root}/app/service/home.js
-const { ctx } = this
-
-ctx.buildXML(data, options) // data => xmlString
-ctx.parseXML(xmlString, options) // xmlString => data
 ```
 
 ## Change logs

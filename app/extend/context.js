@@ -1,30 +1,36 @@
-
-
 module.exports = {
 	/**
-	 * decryptWxMsg
+	 * serializedParams
 	 *
-	 * @param {object} data wx encrypt data
-	 * @param {object} options alipaycrypto options
-	 * @return {object} result
+	 * @param {object} data  Data to be serialized, Strike out the sign field, and strike out parameters with null values.
+	 * @return {string} result
 	 */
-	async decryptWxMsg(data, options) {
-		data = data || this.request.body
+	serializedParams(data) {
+		data = data || this.request.query
 
-		const { encrypt, timestamp, nonce } = data
-		return await this.app.alipaycrypto.decrypt(encrypt, timestamp, nonce, options)
+		return this.app.alipaycrypto.serializedParams(data)
 	},
 
 	/**
-	 * decryptWxMsg
+	 * alipaySign
 	 *
-	 * @param {object} data wx encrypt data
-	 * @param {object} options alipaycrypto options
-	 * @return {object} result
+	 * @param {object, string} data Serialized data
+	 * @param {string} privateKey private key
+	 * @return {string} result
 	 */
-	async encryptWxMsg(data, options) {
-		data = data || this.request.body
+	alipaySign(data, privateKey) {
+		data = data || this.request.query
 
-		return await this.app.alipaycrypto.encrypt(data, options)
+		return this.app.alipaycrypto.encrypt(data, privateKey)
+	},
+
+	/**
+	 * md5 encrypt
+	 *
+	 * @param {object, string} data object or string
+	 * @return {string} result
+	 */
+	md5(data) {
+		return this.app.alipaycrypto.md5(data)
 	}
 }
