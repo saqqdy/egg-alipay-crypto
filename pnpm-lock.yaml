@@ -7,10 +7,10 @@ settings:
 dependencies:
   alipay-crypto:
     specifier: 1.0.1
-    version: 1.0.1(js-cool@5.3.0)
+    version: 1.0.1(js-cool@5.5.0)
   js-cool:
     specifier: ^5.3.0
-    version: 5.3.0
+    version: 5.5.0
 
 devDependencies:
   '@eslint-sets/eslint-config-basic':
@@ -51,7 +51,7 @@ devDependencies:
     version: 1.4.0
   reinstaller:
     specifier: ^3.0.2
-    version: 3.0.2(debug@4.3.4)(js-cool@5.3.0)
+    version: 3.0.2(debug@4.3.4)(js-cool@5.5.0)
   tsnd:
     specifier: ^1.1.0
     version: 1.1.0
@@ -1071,14 +1071,14 @@ packages:
       uri-js: 4.4.1
     dev: true
 
-  /alipay-crypto@1.0.1(js-cool@5.3.0):
+  /alipay-crypto@1.0.1(js-cool@5.5.0):
     resolution: {integrity: sha512-gC9NITkQUhIfFBf6oe1CpZULLx9DG0yGE77l+6yIuozjsbFzrzY5L+Nd6CR7KFW0OpLm5ui7KOMHqQFFtjHMVw==}
     engines: {node: '>=12.20'}
     peerDependencies:
       js-cool: '>= 2'
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
-      js-cool: 5.3.0
+      js-cool: 5.5.0
       tslib: 2.6.1
     transitivePeerDependencies:
       - supports-color
@@ -5074,8 +5074,8 @@ packages:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
     dev: true
 
-  /js-cool@5.3.0:
-    resolution: {integrity: sha512-OuVMIK6/73Z7YqE4y4vAZhMeSD1EpmV5eR/EvPo/wJHqkcW/qWEaFdOPRuymDe8Yd5j4TNOG2hYiTwBwoR/SqQ==}
+  /js-cool@5.5.0:
+    resolution: {integrity: sha512-oTLHeruzQZ2K8NlN2gI++badOF0drNYjVugPxBM4C5v+rgqN0XsfZ40+80Y6CvIWShy9SkxrbJl92BU6Pj/5Gg==}
     engines: {node: '>=12.20'}
     dependencies:
       load-source: 1.2.0
@@ -6556,7 +6556,7 @@ packages:
       jsesc: 0.5.0
     dev: true
 
-  /reinstaller@3.0.2(debug@4.3.4)(js-cool@5.3.0):
+  /reinstaller@3.0.2(debug@4.3.4)(js-cool@5.5.0):
     resolution: {integrity: sha512-VLjzE9tQMghK53x1Ccx96AEdRRe+dKq5zsnSNFLf1d7QsLAaRV0yX3lU1djgIaPYNSjDOXBRXjt8Y/GFTrHt/A==}
     hasBin: true
     peerDependencies:
@@ -6570,7 +6570,7 @@ packages:
       cosmiconfig: 8.2.0
       debug: 4.3.4(supports-color@8.1.1)
       global-modules: 2.0.0
-      js-cool: 5.3.0
+      js-cool: 5.5.0
       monorepo-root: 2.5.1
       ora: 6.3.1
       what-pm: 2.5.1(core-js@3.31.0)
